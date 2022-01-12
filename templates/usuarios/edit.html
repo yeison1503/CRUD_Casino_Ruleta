@@ -1,0 +1,36 @@
+
+{% include 'header.html' %}
+Formulario para editar
+
+
+{% for jugador in jugadores %}
+
+<form method="post" action="/update" enctype="multipart/form-data">
+    
+    ID:
+    <input type="number" value ="{{jugador[0] }}" name="txtID" id="txtID">
+    <br>
+
+    Nombre:
+    <input type="text" value ="{{jugador[1] }}" name="txtNombre" id="txtNombre">
+    <br>
+
+    Edad:
+    <input type="text" value ="{{jugador[2] }}" name="txtEdad" id="txtEdad">
+    <br>
+
+    Dinero:
+    <input type="text" value ="{{jugador[3] }}" name="txtDinero" id="txtDinero">
+
+    FOTO:
+    <input type="file" value ="{{jugador[4] }}" name="txtFoto" id="txtFoto">
+    <br>
+    <br>
+    <input type="submit" value="Modificar">
+
+</form>
+
+{% endfor %}
+
+{% include 'footer.html' %}
+
