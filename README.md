@@ -10,14 +10,13 @@ Para la creación de la base de datos se deben ingresar los siguientes comandos 
 
 #### CREATE DATABASE sistema;
 #### USE sistema;
-CREATE TABLE IF NOT EXISTS usuarios(
- 	id BIGINT UNSIGNED AUTO_INCREMENT NOT NULL,
- 	name VARCHAR(255) NOT NULL,
- 	age SMALLINT NOT NULL,
-  cash SMALLINT NOT NULL,
-  image VARCHAR(255) NOT NULL,
- 	PRIMARY KEY(id)
-);
+#### CREATE TABLE IF NOT EXISTS usuarios(
+####  	id BIGINT UNSIGNED AUTO_INCREMENT NOT NULL,
+####  	name VARCHAR(255) NOT NULL,
+####  	age SMALLINT NOT NULL,
+####   cash SMALLINT NOT NULL,
+####   image VARCHAR(255) NOT NULL,
+####  	PRIMARY KEY(id));
 
 Para el despliegue de la aplicación solo basta con ejecutar el archivo app.py en cualquier terminal de un sistema operativo que tenga instalado Python, por ejemplo, un framework como anaconda o visual studio code.
 
