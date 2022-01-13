@@ -1,5 +1,6 @@
 import numpy as np
 import random
+from flask import flash
 
 def juego_ruleta(saldo,color,apuesta):
     probV=0.02
@@ -16,13 +17,16 @@ def juego_ruleta(saldo,color,apuesta):
     if color == color_aleatorio:
         # Si el usuario Acierta o no
         if color == "verde":
-            print("la apuesta se multiplica por 15")
+            #print("la apuesta se multiplica por 15")
+            flash('Sin saldo para apostar','alert alert-success')
             saldo += int(apuesta) * 15
         else:
-            print("La apuesta se multiplica por 2")
+            flash('La apuesta se multiplica por 2','alert alert-success')
+            #print("La apuesta se multiplica por 2")
             saldo += int(apuesta) * 2
     else:
-        print("Pierde lo apostado")
+        #print("Pierde lo apostado")
+        flash('Pierde lo apostado','alert alert-danger')
         saldo -= int(apuesta)
     
     return saldo

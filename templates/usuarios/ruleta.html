@@ -1,6 +1,11 @@
 {% include 'header.html' %}
 <br>
 <br>
+<h2 class = 'title' style='text-align: center;'>Si se acierta el color</h2>
+<h2 style='text-align:center'>La apuesta se multiplica por 15 si el color es verde.</h2>
+<h2 style='text-align:center'>La apuesta se multiplica por 2 si el color es rojo o negro.</h2>
+<h2 style='text-align:center'>Si no, pierde la apuesta.</h2>
+
 <form method="post" action="/ruleta" enctype="multipart/form-data">
     <!-- Para imprimir datos de la base de datos -->
     <table class="table table-light">
@@ -21,11 +26,6 @@
 
                 <option value="{{jugador[0] }}">{{jugador[1] }}-{{jugador[3] }}</option>
                 
-                {% if jugador[3] == 0 %}
-
-                <label for="">No hay saldo para apostar</label>
-        
-                {% endif %}
             {% endfor %}
             </select></td>
             
@@ -40,7 +40,15 @@
             </tr>
         </tbody>
     </table>
-
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <ul class=flashes>
+        {% for category, message in messages %}
+        <li class="{{ category }}">{{ message }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+    {% endwith %}
     <a>
         <input type="submit" class="btn btn-success btn-center" value="Jugar">
     </a>
