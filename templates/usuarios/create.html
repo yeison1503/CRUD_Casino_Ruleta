@@ -1,24 +1,40 @@
 
 {% include 'header.html' %}
+
 <form method="post" action="/store" enctype="multipart/form-data">
-    
-    Nombre:
-    <input type="text" name="txtNombre" id="txtNombre">
-    <br>
-
-    Edad:
-    <input type="text" name="txtEdad" id="txtEdad">
-    <br>
-
-    Dinero:
-    <input type="text" name="txtDinero" id="txtDinero">
-    <br>
-
-    FOTO:
-    <input type="file" name="txtFoto" id="txtFoto">
-    <br>
-    <br>
-    <input type="submit" value="Agregar">
+    <div class="card">
+        <div class="card-header">
+            Crear Usuario
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Datos del Usuario</h5>
+            <p class="card-text">
+            
+                <div class="form-group">
+                    <label for="txtNombre">Nombre:</label>
+                    <input id="txtNombre" class="form-control" type="text" name="txtNombre" >
+                </div>
+                <div class="form-group">
+                    <label for="txtEdad">Edad:</label>
+                    <input id="txtEdad" class="form-control" type="text" name="txtEdad" >
+                </div>
+                <div class="form-group">
+                    <label for="txtDinero">Dinero:</label>
+                    <input id="txtDinero" class="form-control" type="text" name="txtDinero" >
+                </div>
+                <div class="form-group">
+                    <label for="txtFoto">FOTO:</label>
+                    <input id="txtFoto" class="form-control" type="file" name="txtFoto" >
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-success" value="Agregar">
+                    <a href="{{ url_for('index') }}" class="btn btn-primary">Regresar</a>
+                </div>
+            </p>
+               
+        </div>
+    </div>
 
 </form>
+
 {% include 'footer.html' %}

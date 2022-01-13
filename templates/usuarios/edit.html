@@ -2,32 +2,47 @@
 {% include 'header.html' %}
 Formulario para editar
 
-
 {% for jugador in jugadores %}
 
 <form method="post" action="/update" enctype="multipart/form-data">
     
-    ID:
-    <input type="number" value ="{{jugador[0] }}" name="txtID" id="txtID">
-    <br>
+    <div class="card">
+        <div class="card-header">
+            Editar Usuario
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Datos del Usuario</h5>
+            <p class="card-text">
 
-    Nombre:
-    <input type="text" value ="{{jugador[1] }}" name="txtNombre" id="txtNombre">
-    <br>
+                <input type="hidden" value ="{{jugador[0] }}" name="txtID" id="txtID">
+            
+                <div class="form-group">
+                    <label for="txtNombre">Nombre:</label>
+                    <input id="txtNombre" value ="{{jugador[1] }}" class="form-control" type="text" name="txtNombre">
+                </div>
+                <div class="form-group">
+                    <label for="txtEdad">Edad:</label>
+                    <input id="txtEdad" value ="{{jugador[2] }}" class="form-control" type="text" name="txtEdad">
+                </div>
+                <div class="form-group">
+                    <label for="txtDinero">Dinero:</label>
+                    <input id="txtDinero" value ="{{jugador[3] }}" class="form-control" type="text" name="txtDinero">
+                </div>
+                <!-- <div class="form-group">
+                    <label for="txtFotomy-input">FOTO:</label>
+ 
+                    <input id="txtFoto" value ="{{jugador[4] }}" class="form-control" type="file" name="txtFoto">
+ 
+                </div> -->
+                <div class="form-group">
+                    <input type="submit" class="btn btn-success" value="Modificar">
+                    <a href="{{ url_for('index')}}" class="btn btn-primary">Regresar</a>
+                </div>
 
-    Edad:
-    <input type="text" value ="{{jugador[2] }}" name="txtEdad" id="txtEdad">
-    <br>
-
-    Dinero:
-    <input type="text" value ="{{jugador[3] }}" name="txtDinero" id="txtDinero">
-
-    FOTO:
-    <input type="file" value ="{{jugador[4] }}" name="txtFoto" id="txtFoto">
-    <br>
-    <br>
-    <input type="submit" value="Modificar">
-
+            </p>
+        </div>
+    </div>
+   
 </form>
 
 {% endfor %}

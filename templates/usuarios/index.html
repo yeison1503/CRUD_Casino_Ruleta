@@ -1,4 +1,15 @@
 {% include 'header.html' %}
+
+<br/>
+<a href="{{ url_for('create') }}" class="btn btn-success">
+    
+    Ingresar nuevo Usuario
+
+</a>
+
+<br>
+<br>
+
     <!-- Para imprimir datos de la base de datos -->
     <table class="table table-light">
         <thead class="thead-light">
@@ -17,14 +28,16 @@
             
             {% for jugador in jugadores %}
             <tr>
-                <td>{{jugador[4] }}</td>
+                <td>
+                    <img class="img-thumbnail" width="100" src="uploads/{{jugador[4] }}" alt="">
+                </td>
                 <td>{{jugador[1] }}</td>
                 <td>{{jugador[2] }}</td>
                 <td>{{jugador[3] }}</td>
                 <td>{{jugador[0] }}</td>
                 <td>
-                    <a href="/edit/{{jugador[0]}}">Editar</a> | 
-                    <a href="/destroy/{{jugador[0]}}">Eliminar</a>
+                    <a class="btn btn-warning" href="/edit/{{jugador[0]}}">Editar</a> | 
+                    <a onclick="return confirm('¿Desea Eliminar el Usuario?')" class="btn btn-danger" href="/destroy/{{jugador[0]}}">Eliminar</a>
                 </td>
             </tr>
             {% endfor %}

@@ -1,0 +1,49 @@
+{% include 'header.html' %}
+<br>
+<br>
+<form method="post" action="/ruleta" enctype="multipart/form-data">
+    <!-- Para imprimir datos de la base de datos -->
+    <table class="table table-light">
+        <thead class="thead-light">
+            <tr>
+
+                <th>Nombre-Dinero</th>
+                <th>Valor Apuesta</th>
+                <th>Tipo de Apuesta</th>
+
+            </tr>
+        </thead>
+        <tbody>
+           <tr>
+
+            <td><select name="txtJugador" id="txtJugador">
+            {% for jugador in jugadores %}
+
+                <option value="{{jugador[0] }}">{{jugador[1] }}-{{jugador[3] }}</option>
+                
+                {% if jugador[3] == 0 %}
+
+                <label for="">No hay saldo para apostar</label>
+        
+                {% endif %}
+            {% endfor %}
+            </select></td>
+            
+            <td><input type="number" name="txtApuesta" id="txtApuesta"></td>
+            
+            <td><select name="txtTipo" id="txtTipo">
+                    <option value="verde">Verde</option>
+                    <option value="rojo">Rojo</option>
+                    <option value="negro">Negro</option>
+            </select></td>
+               
+            </tr>
+        </tbody>
+    </table>
+
+    <a>
+        <input type="submit" class="btn btn-success btn-center" value="Jugar">
+    </a>
+
+</form>
+{% include 'footer.html' %}
