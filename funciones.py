@@ -13,7 +13,8 @@ def juego_ruleta(saldo,color,apuesta):
     COLOR = np.random.choice([rojo, negro, verde], size = 100, p=[0.49,0.49,0.02])
 
     color_aleatorio = COLOR[random.randint(0, 100)]
-    print("\nColor obtenido: " + color_aleatorio)
+    #print("\nColor obtenido: " + color_aleatorio)
+    flash("Color obtenido: " + color_aleatorio ,'alert alert-info')
     if color == color_aleatorio:
         # Si el usuario Acierta o no
         if color == "verde":
@@ -30,3 +31,16 @@ def juego_ruleta(saldo,color,apuesta):
         saldo -= int(apuesta)
     
     return saldo
+
+#Comandos para crear la base de datos en MySQL
+
+# CREATE DATABASE sistema;
+# USE sistema;
+# CREATE TABLE IF NOT EXISTS usuarios(
+# 	id BIGINT UNSIGNED AUTO_INCREMENT NOT NULL,
+# 	name VARCHAR(255) NOT NULL,
+# 	age SMALLINT NOT NULL,
+#   cash SMALLINT NOT NULL,
+#   image VARCHAR(255) NOT NULL,
+# 	PRIMARY KEY(id)
+# );
