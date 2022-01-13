@@ -1,6 +1,5 @@
 # https://prueba-crud-ruleta.herokuapp.com/
 
-import re
 from sys import path
 from flask import Flask
 from flask import render_template,request,redirect,flash,url_for
