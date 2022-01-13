@@ -8,7 +8,7 @@ Para iniciar la ejecución se debe crear la base de datos de MySQL, para cual se
 
 Para la creación de la base de datos se deben ingresar los siguientes comandos en el Shell o terminal de XAMPP.
 
-#### CREATE DATABASE sistema;
+####### CREATE DATABASE sistema;
 #### USE sistema;
 #### CREATE TABLE IF NOT EXISTS usuarios(
 ####  	id BIGINT UNSIGNED AUTO_INCREMENT NOT NULL,
